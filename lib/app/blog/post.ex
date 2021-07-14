@@ -13,6 +13,9 @@ defmodule App.Blog.Post do
   def changeset(post, attrs) do
     post
     |> cast(attrs, [:title, :views])
-    |> validate_required([:title, :views])
+    # |> validate_required([:title, :views])
+    |> validate_required([:title, "Titulo precisa ser informado."])
+    |> validate_required([:title, "Views precisa ser informado."])
+
   end
 end
